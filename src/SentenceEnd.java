@@ -1,4 +1,25 @@
-import java.util.regex.Matcher;
+
+public class SentenceEnd implements TextElement {
+    private String sentenceEnd;
+
+    public SentenceEnd(String sentenceEnd) {
+        this.sentenceEnd = sentenceEnd;
+    }
+
+    public String getWord() {
+        return sentenceEnd;
+    }
+
+    public void setWord(String sentenceEnd) {
+        this.sentenceEnd = sentenceEnd;
+    }
+
+    @Override
+    public String getTextElement(Text text) {
+        return sentenceEnd;
+    }
+}
+/*import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SentenceEnd extends Symbol {
@@ -15,3 +36,4 @@ public class SentenceEnd extends Symbol {
         } return sentenceEnd;
     }
 }
+*/
