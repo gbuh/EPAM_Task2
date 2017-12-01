@@ -1,24 +1,3 @@
-
-public class PhoneNumber implements TextElement {
-    private String phoneNumber;
-
-    public PhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getWord() {
-        return phoneNumber;
-    }
-
-    public void setWord(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    @Override
-    public String getTextElement(Text text) {
-        return phoneNumber;
-    }
-}
 /*
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

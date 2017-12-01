@@ -1,18 +1,17 @@
 
-/*
 import java.util.LinkedList;
 
 public class Sentence {
 
-    private LinkedList<TextElement> sentence;
+    private LinkedList<SentenceElement> sentence;
 
-    public Sentence(LinkedList<TextElement> sentence) {
+    public Sentence(LinkedList<SentenceElement> sentence) {
         this.sentence = sentence;
     }
 
     public int wordsCount() {
         int r = 0;
-        for (TextElement e : sentence) {
+        for (SentenceElement e : sentence) {
             if (e instanceof Word) {
                 ++r;
             }
@@ -25,4 +24,3 @@ public class Sentence {
         return "Sentence{" + "sentence=" + sentence + '}';
     }
 }
-*/

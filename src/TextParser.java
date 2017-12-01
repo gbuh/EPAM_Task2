@@ -11,13 +11,7 @@ public class TextParser {
 
     public static void main(String[] args) {
 
-        String textInput = "I send e-mail to: igor_lipko@mail.ru and call the  phone number:    8(029)510-53-05. Hi, all!";
-        
-        ArrayList<String> textElements = new ArrayList<>();
-        
-        Text text = new Text("Hi");
-        text.setTextElement(new Word(""));
-/*        try {
+        try {
             File file = new File("FakeBookInput.txt");
             //создаем объект FileReader для объекта File
             FileReader filereader = new FileReader(file);
@@ -51,7 +45,6 @@ public class TextParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-*/
     }
+
 }

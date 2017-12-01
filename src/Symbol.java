@@ -1,5 +1,5 @@
-/*
-public class Symbol implements TextElement {
+
+public class Symbol implements SentenceElement {
     private char symbol;
 
     public Symbol(char symbol) {
@@ -11,4 +11,3 @@ public class Symbol implements TextElement {
         return "Symbol{" + "symbol=" + symbol + '}';
     }
 }
-*/

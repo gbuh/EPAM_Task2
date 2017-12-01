@@ -1,21 +1,4 @@
 
-public class Text {
-    private TextElement textElement;
-    private String input;
-
-    public Text(String input) {
-        this.input = input;
-    }
-
-    public void setTextElement(TextElement textElement) {
-        this.textElement = textElement;
-    }
-    
-    public String getTextElement() {
-        return textElement.getTextElement(this);
-    }
-}
-/*
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -36,7 +19,7 @@ public class Text {
         String sentenceEnd;
         
         Sentence sentence;
-        LinkedList<TextElement> currentSentenceElements = new LinkedList<>();
+        LinkedList<SentenceElement> currentSentenceElements = new LinkedList<>();
         
         while (matcher.find()) {
             word = matcher.group(1);
@@ -82,4 +65,3 @@ public class Text {
         return textCopy;
     }
 }
-*/

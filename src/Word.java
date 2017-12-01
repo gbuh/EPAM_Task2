@@ -1,21 +1,13 @@
 
-public class Word implements TextElement {
+public class Word implements SentenceElement {
     private String word;
 
     public Word(String word) {
         this.word = word;
     }
 
-    public String getWord() {
-        return word;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
-    }
-
     @Override
-    public String getTextElement(Text text) {
-        return word;
+    public String toString() {
+        return "Word{" + "word=" + word + '}';
     }
 }

@@ -1,25 +1,3 @@
-
-public class PunctuationMark implements TextElement {
-    private String punctuationMark;
-
-    public PunctuationMark(String punctuationMark) {
-        this.punctuationMark = punctuationMark;
-    }
-
-    public String getWord() {
-        return punctuationMark;
-    }
-
-    public void setWord(String punctuationMark) {
-        this.punctuationMark = punctuationMark;
-    }
-
-    @Override
-    public String getTextElement(Text text) {
-        return punctuationMark;
-    }
-}
-/*
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,4 +23,3 @@ public class PunctuationMark extends Symbol {
     //        }
     //    }
 }
-*/

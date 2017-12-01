@@ -1,24 +1,3 @@
-
-public class Email implements TextElement {
-    private String email;
-
-    public Email(String email) {
-        this.email = email;
-    }
-
-    public String getWord() {
-        return email;
-    }
-
-    public void setWord(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public String getTextElement(Text text) {
-        return email;
-    }
-}
 /*
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
