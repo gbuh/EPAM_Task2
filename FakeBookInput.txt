@@ -6,5 +6,5 @@ It was fairly secure and its security was configurable, allowing for network and
 The major web browsers soon incorporated it into their standard configurations in a secure "applet" configuration popular quickly. 
 New versions for large and small platforms (J2EE and J2ME) soon were designed with the advent of "Java 2". 
 Sun has not announced any plans for a "Java 3"? 
-igorlipko75@gmail.com, 75igor_lipko@mail.ru, igor.lipko@outlook.com. 
+igor.lipko@outlook.com, igorlipko75@gmail.com, 75igor_lipko@mail.ru. 
 8(017)217-23-98, 8(029)510-53-05, 8(212)22-34-64. 

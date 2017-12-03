@@ -12,8 +12,10 @@ public class Text {
 
     public Text(String input) {
         
-        Pattern pattern = Pattern.compile("([\\w`]+)|([,;:\\-\"\'])|([!\\?\\.]+\\s+)"
-                + "|(^[A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$)");
+        Pattern pattern = Pattern.compile(
+                "([\\w`]+)|([,;:\\-\"\'])|([!\\?\\.]+\\s+)"
+                + "|(8[\\(]\\p{Digit}{3}[\\)]\\p{Digit}{3}-\\p{Digit}{2}-\\p{Digit}{2})"
+                + "|([A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,}))");
         Matcher matcher = pattern.matcher(input);
         String email;
         String word;
@@ -25,7 +27,12 @@ public class Text {
         LinkedList<SentenceElement> currentSentenceElements = new LinkedList<>();
         
         while (matcher.find()) {
-            email = matcher.group(4);
+            phoneNumber = matcher.group(4);
+            if (phoneNumber != null) {
+                currentSentenceElements.add(new PhoneNumber(phoneNumber));
+            }
+            
+            email = matcher.group(5);
             if (email != null) {
                 currentSentenceElements.add(new Email(email));
             }
