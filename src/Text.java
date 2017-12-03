@@ -12,27 +12,35 @@ public class Text {
 
     public Text(String input) {
         
-        Pattern pattern = Pattern.compile("([\\w']+)|([,;:\\-\"\'])|([!\\?\\.]+)");
+        Pattern pattern = Pattern.compile("([\\w`]+)|([,;:\\-\"\'])|([!\\?\\.]+\\s+)"
+                + "|(^[A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$)");
         Matcher matcher = pattern.matcher(input);
+        String email;
         String word;
-        String punctuatioMark;
+        String phoneNumber;
+        String punctuationMark;
         String sentenceEnd;
         
         Sentence sentence;
         LinkedList<SentenceElement> currentSentenceElements = new LinkedList<>();
         
         while (matcher.find()) {
+            email = matcher.group(4);
+            if (email != null) {
+                currentSentenceElements.add(new Email(email));
+            }
+            
             word = matcher.group(1);
             if (word != null) {
                 currentSentenceElements.add(new Word(word));
             }
-            punctuatioMark = matcher.group(2);
-            if (punctuatioMark != null) {
-                currentSentenceElements.add(new Symbol(punctuatioMark.charAt(0)));
+            punctuationMark = matcher.group(2);
+            if (punctuationMark != null) {
+                currentSentenceElements.add(new PunctuationMark(punctuationMark.charAt(0)));
             }
             sentenceEnd = matcher.group(3);
             if (sentenceEnd != null) {
-                currentSentenceElements.add(new Symbol(sentenceEnd.charAt(0)));
+                currentSentenceElements.add(new SentenceEnd(sentenceEnd));
                 
                 sentence = new Sentence(currentSentenceElements);
                 currentSentenceElements = new LinkedList<>();

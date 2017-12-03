@@ -1,13 +1,12 @@
 
-public class Symbol implements SentenceElement {
+public abstract class Symbol {
     private char symbol;
 
     public Symbol(char symbol) {
         this.symbol = symbol;
     }
 
-    @Override
-    public String toString() {
-        return "Symbol{" + "symbol=" + symbol + '}';
+    public char getSymbol() {
+        return symbol;
     }
 }

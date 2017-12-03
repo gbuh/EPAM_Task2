@@ -6,8 +6,12 @@ public class Word implements SentenceElement {
         this.word = word;
     }
 
+    public String getWord() {
+        return word;
+    }
+
     @Override
     public String toString() {
-        return "Word{" + "word=" + word + '}';
+        return "Word={" + word + '}';
     }
 }

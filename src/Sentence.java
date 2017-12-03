@@ -21,6 +21,6 @@ public class Sentence {
 
     @Override
     public String toString() {
-        return "Sentence{" + "sentence=" + sentence + '}';
+        return "Sentence={" + sentence + '}';
     }
 }
