@@ -34,11 +34,11 @@ public class TextParser {
                 System.out.println(sentence);
                 System.out.println(sentence.wordsCount());
             }
+            
             System.out.println("TASK2:");
-            ArrayList<Sentence> task2 = text.task2();
-            for(Sentence sentence : task2) {
-                System.out.println(sentence);
-                System.out.println(sentence.wordsCount());
+            ArrayList<Word> task2 = text.task2();
+            for(Word word : task2) {
+                System.out.println(word);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -1,5 +1,5 @@
 
-public class Word implements SentenceElement {
+public class Word implements Comparable<Word>, SentenceElement {
     private String word;
 
     public Word(String word) {
@@ -13,5 +13,10 @@ public class Word implements SentenceElement {
     @Override
     public String toString() {
         return "Word={" + word + '}';
+    }
+    
+    @Override
+    public int compareTo(Word anotherWord) {
+            return word.compareToIgnoreCase(anotherWord.getWord());
     }
 }
