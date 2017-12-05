@@ -32,12 +32,12 @@ public class TextParser {
             LinkedList<Sentence> sentences = text.getText();
             for(Sentence sentence : sentences) {
                 System.out.println(sentence);
-                System.out.println(sentence.wordsCount());
+//                System.out.println(sentence.wordsCount());
             }
             
-            System.out.println("TASK2:");
-            ArrayList<Word> task2 = text.task2();
-            for(Word word : task2) {
+            System.out.println("Task 8: Sorted on first consonant letter");
+            ArrayList<Word> task8 = text.task8();
+            for(Word word : task8) {
                 System.out.println(word);
             }
         } catch (FileNotFoundException e) {

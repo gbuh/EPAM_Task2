@@ -12,9 +12,9 @@ public class Word implements Comparable<Word>, SentenceElement {
 
     @Override
     public String toString() {
-        return "Word={" + word + '}';
+            return word;
     }
-    
+
     @Override
     public int compareTo(Word anotherWord) {
             return word.compareToIgnoreCase(anotherWord.getWord());

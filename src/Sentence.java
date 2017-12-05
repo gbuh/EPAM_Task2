@@ -9,15 +9,15 @@ public class Sentence {
         this.sentence = sentence;
     }
 
-    public int wordsCount() {
-        int r = 0;
-        for (SentenceElement e : sentence) {
-            if (e instanceof Word) {
-                ++r;
-            }
-        }
-        return r;
-    }
+//    public int wordsCount() {
+//        int r = 0;
+//        for (SentenceElement e : sentence) {
+//            if (e instanceof Word || e instanceof Email || e instanceof PhoneNumber) {
+//                ++r;
+//            }
+//        }
+//        return r;
+//    }
 
     @Override
     public String toString() {
