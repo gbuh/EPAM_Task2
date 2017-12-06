@@ -1,8 +1,18 @@
+package logic;
 
 import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import domain.Word;
+
+/**
+ * This class sorts words beginning with vowels sorted
+ * alphabetically by the first consonant letter of the word
+ * 
+ * @version 1.6 06 Dec 2017
+ * @author  Igor Lipko
+ */
 public class WordComparator implements Comparator<Word> {
     public int compare(Word w1, Word w2) {
         String letter1 = null;

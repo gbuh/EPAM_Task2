@@ -1,3 +1,4 @@
+package logic;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,6 +7,16 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import domain.*;
+
+/**
+ * This class breaks the text into elements of sentences,
+ * creates a list of sentences and
+ * creates a sorted list of words starting with vowels
+ * 
+ * @version 1.6 06 Dec 2017
+ * @author  Igor Lipko
+ */
 public class Text {
     private LinkedList<Sentence> text       = new LinkedList<>();
     private ArrayList<Word>      words      = new ArrayList<>();

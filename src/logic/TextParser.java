@@ -1,3 +1,4 @@
+package logic;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,9 +8,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class TextParser {
-    public static void main(String[] args) {
+import domain.Sentence;
+import domain.Word;
 
+/**
+ * This class holds a text as a list of sentences,
+ * replaces tabs and sequences of spaces with one space
+ * and starts words processing.
+ * 
+ * @version 1.6 06 Dec 2017
+ * @author  Igor Lipko
+ */
+public class TextParser {
+    public void parse() {
         try {
             File file = new File("FakeBookInput.txt");
             FileReader filereader = new FileReader(file);
@@ -22,7 +33,11 @@ public class TextParser {
             }
             reader.close();
             line = line.replaceAll("([\\s]+)", " ");
+            line = line.trim();
+            System.out.println("The text is read from the file:");
             System.out.println(line);
+            System.out.println("\nThe text is disassembled into elements:");
+
             Text text = new Text(line);
 
             LinkedList<Sentence> sentences = text.getText();
@@ -30,7 +45,7 @@ public class TextParser {
                 System.out.println(sentence);
             }
 
-            System.out.println("Task 8: Sorted on first consonant letter");
+            System.out.println("\nTask 8: Sorted on first consonant letter");
             ArrayList<Word> task8 = text.task8();
             for(Word word : task8) {
                 System.out.println(word);
