@@ -12,11 +12,11 @@ public class Text {
     private static final String  WORD       = "([\\w`]+)";
     private static final String  PUNCT_MARK = "([,;:\\-\"\'])";
     private static final String  SENT_END   = "([!\\?\\.]+\\s+)";
-    private static final String  EMAIL      =
+    private static final String  EMAIL      = 
             "([A-Za-z0-9\\-]+([\\.\\_][A-Za-z0-9-]+)*@[A-Za-z0-9]+"
-                    + "(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,}))";
+          + "(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,}))";
     private static final String  PHONE      = "(8[\\(]\\p{Digit}{3}[\\)]"
-            + "\\p{Digit}{3}-\\p{Digit}{2}-\\p{Digit}{2})";
+          + "\\p{Digit}{3}-\\p{Digit}{2}-\\p{Digit}{2})";
 
     public Text(String input) {
         Pattern pattern = Pattern.compile(
@@ -24,11 +24,10 @@ public class Text {
         Matcher matcher = pattern.matcher(input);
 
         String email;
-        String word;
         String phoneNumber;
+        String word;
         String punctuationMark;
         String sentenceEnd;
-
         Sentence sentence;
         Word newWord;
         LinkedList<SentenceElement> currentSentenceElements = new LinkedList<>();
@@ -38,29 +37,25 @@ public class Text {
             if (phoneNumber != null) {
                 currentSentenceElements.add(new PhoneNumber(phoneNumber));
             }
-
             email = matcher.group(1);
             if (email != null) {
                 currentSentenceElements.add(new Email(email));
             }
-
             word = matcher.group(6);
             if (word != null) {
                 newWord = new Word("Word={" + word + "}");
                 currentSentenceElements.add(newWord);
-                Matcher matcherWord =
+                Matcher matcherWord = 
                         (Pattern.compile("[aeiouy]+[^aeiouy]+")).matcher(word);
                 if (matcherWord.matches()) {
                     words.add(new Word(word));
                 }
             }
-
             punctuationMark = matcher.group(7);
             if (punctuationMark != null) {
                 currentSentenceElements
                 .add(new PunctuationMark(punctuationMark.charAt(0)));
             }
-
             sentenceEnd = matcher.group(8);
             if (sentenceEnd != null) {
                 currentSentenceElements.add(new SentenceEnd(sentenceEnd));
@@ -76,12 +71,9 @@ public class Text {
         return text;
     }
 
-//    public ArrayList<Word> getWords() {
-//        return words;
-//    }
-
     public ArrayList<Word> task8() {
         ArrayList<Word> wordsCopy = new ArrayList<>(words.size());
+        
         for (Word word : words) {
             wordsCopy.add(word);
         }
