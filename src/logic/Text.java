@@ -89,6 +89,12 @@ public class Text {
             wordsCopy.add(word);
         }
 
+        Collections.sort(wordsCopy, new Comparator<Word>() {
+
+            public int compare(Word o1, Word o2) {
+                return o1.compareTo(o2);
+            }
+      });
         Comparator<Word> comarator = new WordComparator();
         Collections.sort(wordsCopy, comarator); 
         return wordsCopy;
